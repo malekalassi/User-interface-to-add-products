@@ -1,0 +1,111 @@
+<!-- https://bootsnipp.com/snippets/35V6b -->
+<div class=" container">
+  <br />
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-8">
+      <form class="card card-sm" #post="ngForm" (ngSubmit)="onCreatePost(post.value)">
+        <div class="card-body row no-gutters align-items-center">
+          <div class="col-auto">
+            <i class="fas fa-search  text-body"></i>
+          </div>
+          <!--end of col-->
+          <div class="col">
+            <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Urun Arama"
+              required ngModel name="name" />
+          </div>
+          <!--end of col-->
+          <div class="col-auto">
+            <button class="btn btn-lg btn-success disabled" type="submit">
+              Search
+            </button>
+          </div>
+          <!--end of col-->
+        </div>
+      </form>
+    </div>
+
+    <!--end of col-->
+  </div>
+</div>
+<!-- ********************************************** -->
+
+<!-- **************************** -->
+<div class=" container">
+  <br />
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-8">
+      <form class="card card-sm" #postForm="ngForm" (ngSubmit)="onCreateKat(postForm.value)">
+        <div class="card-body row no-gutters align-items-center">
+          <div class="col-auto">
+            <i class="fas fa-search  text-body"></i>
+          </div>
+          <!--end of col-->
+          <div class="col">
+            <input class="form-control form-control-lg form-control-borderless" type="search"
+              placeholder="Kategori Arama" required ngModel name="title" />
+          </div>
+          <!--end of col-->
+          <div class="col-auto">
+            <button class="btn btn-lg btn-success disabled" type="submit">
+              Search
+            </button>
+          </div>
+          <!--end of col-->
+        </div>
+      </form>
+    </div>
+
+    <!--end of col-->
+  </div>
+</div>
+<div class="container">
+  <br />
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-8">
+      <form class="card card-sm" #posts="ngForm" (ngSubmit)=onCreateMarka(posts.value)>
+        <div class="card-body row no-gutters align-items-center">
+          <div class="col-auto">
+            <i class="fas fa-search  text-body"></i>
+          </div>
+          <!--end of col-->
+          <div class="col">
+            <input class="form-control form-control-lg form-control-borderless" type="search" required ngModel
+              name="marka" placeholder="Marka Arama" />
+          </div>
+          <!--end of col-->
+          <div class="col-auto">
+            <button class="btn btn-lg btn-success  disabled" type="submit">
+              Search
+            </button>
+          </div>
+          <!--end of col-->
+        </div>
+      </form>
+    </div>
+    <!--end of col-->
+  </div>
+</div>
+<!-- BUTTON PLACE -->
+<div class="container ">
+  <div class="row mt-5">
+    <div class="col ">
+      <button type="button" class="btn btn-outline-primary" routerLink="/urundetail">
+        Urun ekle
+      </button>
+    </div>
+    <div class="col">
+      <button type="button" class="btn btn-outline-success  " routerLink="/kategori">
+        kategori ekle
+      </button>
+    </div>
+    <div class="col">
+      <button type="button" class="btn btn-outline-danger" routerLink="/marka">
+        Marka ekle
+      </button>
+    </div>
+  </div>
+
+</div>
+<!-- <div *ngFor="let post of posts" class="alert alert-primary" role="alert">
+  {{post.sok_fiyat }}
+</div> -->

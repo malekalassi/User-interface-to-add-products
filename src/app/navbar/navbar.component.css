@@ -1,0 +1,7 @@
+.fab {
+    transition: all .5s;
+}
+
+.fab:hover {
+    transform: rotate(360deg);
+}

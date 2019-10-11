@@ -1,0 +1,145 @@
+<div class="container">
+  <div class="row">
+    <div class="col-*-*">
+
+
+      <div class="input-group mb-3 ">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">sok_fiyat</span>
+        </div>
+        <input type="text" class="form-control" placeholder="şok fiyat" aria-label="Username"
+          aria-describedby="basic-addon1" [(ngModel)]="urunUzun.sok_fiyat ">
+      </div>
+
+
+
+      <div class="input-group mb-3 ">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">101 fiyat</span>
+        </div>
+        <input type="text" class="form-control" placeholder="101 fiyat" aria-label="Username"
+          aria-describedby="basic-addon1" [(ngModel)]="urunUzun.a101_fiyat">
+      </div>
+
+
+      <div class="input-group mb-3 ">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">bim fiyat</span>
+        </div>
+        <input type="text" class="form-control" placeholder="bim fiyat" aria-label="Username"
+          aria-describedby="basic-addon1" [(ngModel)]="urunUzun.bim_fiyat">
+      </div>
+
+
+    </div>
+
+    <div class="col-*-*">
+
+      <div class="input-group mb-3 ml-2 ">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Resim küçük link</span>
+        </div>
+        <input type="text" class="form-control" placeholder="Resim küçük link" aria-label="Username"
+          aria-describedby="basic-addon1" [(ngModel)]="urunUzun.resim_kucuk">
+      </div>
+      <div class="input-group mb-3 ml-2 ">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Resim orta link</span>
+        </div>
+        <input type="text" class="form-control" placeholder="Resim orta link" aria-label="Username"
+          aria-describedby="basic-addon1" [(ngModel)]="urunUzun.resim_orta">
+      </div>
+
+      <div class="input-group mb-3 ml-2 ">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Resim büyük link</span>
+        </div>
+        <input type="text" class="form-control" placeholder="Resim büyük link" aria-label="Username"
+          aria-describedby="basic-addon1" [(ngModel)]="urunUzun.resim_buyuk">
+      </div>
+    </div>
+    <div class="col-*-*">
+
+      <div class="input-group mb-3 ml-2 ">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Urun durum</span>
+        </div>
+        <input type="text" class="form-control" placeholder="Urun durum" aria-label="Username"
+          aria-describedby="basic-addon1" [(ngModel)]="urunUzun.resim_orta">
+      </div>
+
+      <div class="input-group mb-3 ml-2  ">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Urun ad</span>
+        </div>
+        <input type="text" class="form-control" placeholder="Urun ad" aria-label="Username"
+          aria-describedby="basic-addon1" [(ngModel)]="urunUzun.urun_ad">
+      </div>
+
+      <div class="input-group mb-3 ml-2 ">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Menşei</span>
+        </div>
+        <input type="text" class="form-control" placeholder="Menşei" aria-label="Username"
+          aria-describedby="basic-addon1" [(ngModel)]="urunUzun.mensei">
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="row">
+    <div class="col-*-* mr-3">
+
+
+      <div class="input-group mb-3 ">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">boyut</span>
+        </div>
+        <input type="text" class="form-control" placeholder="şok fiyat" aria-label="Username"
+          aria-describedby="basic-addon1" [(ngModel)]="urunUzun.boyut">
+      </div>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Hacim</span>
+        </div>
+        <input type="text" class="form-control" placeholder="Hacim" aria-label="Username"
+          aria-describedby="basic-addon1" [(ngModel)]="urunUzun.hacim">
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Gram</span>
+        </div>
+        <input type="text" class="form-control" placeholder="Gram" aria-label="Username" aria-describedby="basic-addon1"
+          [(ngModel)]="urunUzun.gram">
+      </div>
+    </div>
+
+    <div class="col-*-*">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Karegori Id</span>
+        </div>
+        <input type="text" class="form-control" placeholder="Karegori Id" aria-label="Karegori Id"
+          aria-describedby="basic-addon1" [(ngModel)]="urunUzun.kid">
+      </div>
+
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Açıklama</span>
+        </div>
+        <textarea class="form-control special" aria-label="Açıklama" [(ngModel)]="urunUzun.urun_aciklama"></textarea>
+      </div>
+    </div>
+    <div class="col-*-*">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <button class="btn btn-outline-success" type="button" id="button-addon1">Marka seç</button>
+        </div>
+        <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+          aria-describedby="button-addon1" [(ngModel)]="urunUzun.marka_ad">
+      </div>
+
+
+    </div>

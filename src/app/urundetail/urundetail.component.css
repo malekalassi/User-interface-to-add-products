@@ -1,0 +1,12 @@
+.row {
+    max-width: 100%;
+}
+
+.input-group {
+    width: 300px;
+}
+
+.container {
+    width: 95%;
+    height: 100vh;
+}

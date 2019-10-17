@@ -2,8 +2,6 @@ import { UrunService } from './../Services/urun.service';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { post } from 'selenium-webdriver/http';
-
 
 @Component({
   selector: 'app-home',
@@ -16,15 +14,6 @@ export class HomeComponent implements OnInit {
 
 
   constructor(private http: HttpClient, private router: Router, private urunService: UrunService) {
-    // this.http.get('http://89.252.178.118/search/urun?baslangic=0&bitis=20&sorgu=a', {
-
-    // })
-    //   .subscribe(e => {
-    //     this.posts = e;
-    //     console.log(e)
-    //   }
-    //   )
-
 
   }
   ngOnInit() {

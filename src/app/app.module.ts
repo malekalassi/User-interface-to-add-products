@@ -13,6 +13,10 @@ import { UrundetailComponent } from './urundetail/urundetail.component';
 import { KategoriComponent } from './kategori/kategori.component';
 import { DxSelectBoxModule, DxListModule, DxTemplateModule } from 'devextreme-angular';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PosturunComponent } from './posturun/posturun.component';
+
+
 
 
 @NgModule({
@@ -26,6 +30,9 @@ import { HttpClientModule } from '@angular/common/http';
     UrunozellikComponent,
     UrundetailComponent,
     KategoriComponent,
+    PosturunComponent,
+
+
 
 
   ],
@@ -37,7 +44,10 @@ import { HttpClientModule } from '@angular/common/http';
     DxSelectBoxModule,
     DxListModule,
     DxTemplateModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

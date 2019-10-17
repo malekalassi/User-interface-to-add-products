@@ -4,14 +4,14 @@
 
     <!-- Icon -->
     <div class="fadeIn first">
-     <i class="fas fa-users"></i>
+      <i class="fas fa-users"></i>
     </div>
 
     <!-- Login Form -->
-    <form (submit)="onLogin()">
-      <input type="text" id="login" class="fadeIn second" [(ngModel)]="login" name="login" placeholder="login">
-      <input type="password" id="password" class="fadeIn third"  [(ngModel)]="passwor" name="passwor" placeholder="password">
-      <input type="submit"  class="fadeIn fourth"  routerLink="/home" value="Log In">
+    <form #post="ngForm" (ngSubmit)="onLogin(post.value)">
+      <input type="text" id="login" class="fadeIn second" ngModel name="jhon" placeholder="login">
+      <input type="password" id="password" class="fadeIn third" ngModel name="wick" placeholder="passWord">
+      <input type="submit" class="fadeIn fourth" value="Login In">
     </form>
 
     <!-- Remind Passowrd -->

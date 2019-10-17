@@ -8,9 +8,9 @@ import { Router, ActivatedRoute } from '@angular/router';
   selector: 'app-urunozellik',
   templateUrl: './urunozellik.component.html',
   styleUrls: ['./urunozellik.component.css'],
-  host: {
-    "(document:click)": "onDocumentClicked($event)"
-  }
+  // host: {
+  //   "(document:click)": "onDocumentClicked($event)"
+  // }
 
 })
 export class UrunozellikComponent implements OnInit {
@@ -22,17 +22,11 @@ export class UrunozellikComponent implements OnInit {
 
 
 
-  onDocumentClicked(ev) {
+  onDocumentClicked(event: Event) {
+    const target = event.target as HTMLTextAreaElement;
+    let idNumber = +target.textContent;
+    this.router.navigate(['/urundetail', { idNumber }])
 
-    let className = 'mat-cell cdk-column-urun_id mat-column-urun_id';
-
-
-    if (ev.target.className == className) {
-
-      let idNumber = +ev.target.textContent;
-      console.log(idNumber);
-      this.router.navigate(['/urundetail', { idNumber }])
-    }
   }
 
   posts
@@ -43,7 +37,6 @@ export class UrunozellikComponent implements OnInit {
     this.urunService.GetUrurs({ title: title }).subscribe(
       res => {
         this.posts = res;
-        console.log(res);
 
       }
     );

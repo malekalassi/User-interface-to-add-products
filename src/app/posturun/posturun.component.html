@@ -46,15 +46,13 @@
       </div>
     </div>
     <div class="col">
-
-      <div class="input-group mb-3 ">
+      <!-- <div class="input-group mb-3 ">
         <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">kid</span>
+          <span class="input-group-text" id="basic-addon1">marka_id</span>
         </div>
-        <input type="text" class="form-control" placeholder="sok fiyat" aria-label="Username"
-          aria-describedby="basic-addon1" [(ngModel)]="urunUzun.kid " name="kid">
-      </div>
-
+        <input type="text" class="form-control" placeholder="marka_id" aria-label="Username"
+          aria-describedby="basic-addon1" [(ngModel)]="urunUzun.marka_id" name="marka_id">
+      </div> -->
 
       <mat-form-field class="example-full-width">
         <input type="text" placeholder="Marka Ad" value="{{urunUzun.marka_ad}}" matInput [formControl]="Marka"
@@ -75,8 +73,6 @@
           </mat-option>
         </mat-autocomplete>
       </mat-form-field>
-
-      <button id="delete" type="button" (click)="deleteUrun($event)" class="delete"> Delete </button>
 
     </div>
     <div class="col">
@@ -144,7 +140,7 @@
     </div>
   </div>
   <div class="row">
-    <button mat-stroked-button type="submit" class="gonder"> Gönder </button>
+    <button mat-stroked-button type="submit"> Post urun </button>
   </div>
 
 </form>

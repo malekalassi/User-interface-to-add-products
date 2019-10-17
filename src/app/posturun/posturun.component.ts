@@ -1,14 +1,9 @@
-
-import { UrunService } from './../Services/urun.service';
-import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { UrunService } from './../Services/urun.service';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
-import { HttpClient } from '@angular/common/http';
 import { __values } from 'tslib';
-
-
 
 
 export interface Kad {
@@ -25,13 +20,11 @@ export interface Marka {
 
 
 @Component({
-  selector: 'app-urundetail',
-  templateUrl: './urundetail.component.html',
-  styleUrls: ['./urundetail.component.css']
+  selector: 'app-posturun',
+  templateUrl: './posturun.component.html',
+  styleUrls: ['./posturun.component.css']
 })
-
-export class UrundetailComponent implements OnInit {
-
+export class PosturunComponent implements OnInit {
   kad = new FormControl();
   Marka = new FormControl();
 
@@ -48,19 +41,11 @@ export class UrundetailComponent implements OnInit {
 
 
 
-  idNumber
   urunUzun = {}
-  constructor(private route: ActivatedRoute, private router: Router, private urunService: UrunService, private http: HttpClient) {
 
-  }
+  constructor(private urunservice: UrunService) { }
 
   ngOnInit() {
-
-
-
-
-
-
     this.filteredOptions = this.kad.valueChanges
       .pipe(
         startWith(''),
@@ -75,21 +60,6 @@ export class UrundetailComponent implements OnInit {
         map(name => name ? this.ffilter(name) : this.option.slice())
       );
 
-
-    let idNumber = +this.route.snapshot.paramMap.get('idNumber');
-    console.log(this.urunUzun);
-
-
-    this.idNumber = idNumber;
-    console.log(idNumber);
-    this.urunService.getUzunUrun(idNumber).subscribe(res => {
-
-      this.urunUzun = JSON.parse(JSON.stringify(res));
-      this.urunUzun = this.urunUzun[0];
-      console.log(this.urunUzun);
-
-
-    })
 
   }
   displayFn(Kad?: Kad): string | undefined {
@@ -113,53 +83,48 @@ export class UrundetailComponent implements OnInit {
     return this.option.filter(option => option.ad.toLowerCase().indexOf(filter) === 0);
 
   }
-  postUrunUzun(postData: {
+
+  postUrunUzun(posturun: {
     a101_fiyat: string, sok_fiyat: string, bim_fiyat: string,
     resim_buyuk: string, resim_orta: string, resim_kucuk: string, urun_durum: string,
     boyut: string, gram: string, hacim: string, mensei: string, urun_ad: string, marka_id: string
   }) {
 
     let objput = {
-      "s_f": postData.sok_fiyat,
-      "b_f": postData.bim_fiyat,
-      "a_f": postData.a101_fiyat,
-      "u_dur": postData.urun_durum,
-      "u_ad": postData.urun_ad,
-      "ut_men": postData.mensei,
-      "ut_boy": postData.boyut,
-      "ut_hac": postData.hacim,
-      "ut_gr": postData.gram,
+      "s_f": posturun.sok_fiyat,
+      "b_f": posturun.bim_fiyat,
+      "a_f": posturun.a101_fiyat,
+      "u_dur": posturun.urun_durum,
+      "u_ad": posturun.urun_ad,
+      "ut_men": posturun.mensei,
+      "ut_boy": posturun.boyut,
+      "ut_hac": posturun.hacim,
+      "ut_gr": posturun.gram,
       "ua_ac": "",
       "ka_id": this.kad.value.id,
       "mar_id": this.Marka.value.id,
-      "r_kucuk": postData.resim_kucuk,
-      "r_orta": postData.resim_orta,
-      "r_buyuk": postData.resim_buyuk,
-      "jhon": localStorage.getItem("jhon"),
-      "wick": localStorage.getItem("wick")
+      "r_kucuk": posturun.resim_kucuk,
+      "r_orta": posturun.resim_orta,
+      "r_buyuk": posturun.resim_buyuk,
+      "jhon": localStorage.getItem('jhon'),
+      "wick": localStorage.getItem('wick')
     }
     console.log(objput);
 
+    this.urunservice.postUrun(objput).subscribe(data => {
+      console.log('basarli', data);
 
-
-    this.urunService.updateUrun(this.idNumber, JSON.stringify(objput)).subscribe(data => { console.log(data) },
-      err => {
-        console.log("yanlisssss");
-      },
+    },
+      err => console.log('hatali', err)
+      ,
       () => {
-        console.log("tamam");
+        console.log('tamamlandi');
 
       }
-
     )
 
 
 
   }
-  deleteUrun(e: any) {
-    this.urunService.deleteUrun(this.idNumber).subscribe(data => console.log(data)
-    )
-  }
-
 
 }

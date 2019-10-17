@@ -27,12 +27,7 @@ mat-form-field {
     margin-left: 20px;
 }
 
-.delete {
-    width: 80%;
-    margin: 0 auto;
-}
-
-.gonder {
+button {
     width: 75%;
     margin: 0 auto;
     background-color: rgb(109, 109, 197);

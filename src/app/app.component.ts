@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { trigger, transition, style, animate, query, group } from '@angular/animations';
+
 
 
 @Component({
@@ -10,9 +10,5 @@ import { trigger, transition, style, animate, query, group } from '@angular/anim
 })
 export class AppComponent {
   title = 'bim-project';
-  courses = [
-    'javascript',
-    'Angular'
-  ]
- 
+
 }

@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { UrundetailComponent } from './urundetail/urundetail.component';
+import { PosturunComponent } from './posturun/posturun.component';
 
 
 const routes: Routes = [
@@ -30,9 +31,13 @@ const routes: Routes = [
     path: 'urundetail',
     component: UrundetailComponent
   },
-   {
-     path: 'kategori',
+  {
+    path: 'kategori',
     component: KategoriComponent
+  },
+  {
+    path: 'posturun',
+    component: PosturunComponent
   }
 ]
 

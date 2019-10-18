@@ -30,12 +30,13 @@ interface Urun {
 })
 
 export class UrunService {
-  url = 'http://89.252.178.118/search/urun?baslangic=0&bitis=200&sorgu=';
-  urlk = 'http://89.252.178.118/search/kategori?baslangic=0&bitis=200&sorgu=';
-  urlm = 'http://89.252.178.118/search/marka?baslangic=0&bitis=200&sorgu=';
-  urluzun = 'http://89.252.178.118/uzunurun/';
-  urltamkat = 'http://89.252.178.118/kategoriler?baslangic=0&bitis=50000';
-  urlStanderd = 'http://89.252.178.118/';
+  local = 'http://89.252.178.118/';
+  url = 'search/urun?baslangic=0&bitis=200&sorgu=';
+  urlk = 'search/kategori?baslangic=0&bitis=200&sorgu=';
+  urlm = 'search/marka?baslangic=0&bitis=200&sorgu=';
+  urluzun = 'uzunurun/';
+  urltamkat = 'kategoriler?baslangic=0&bitis=50000';
+  urlStanderd = '';
 
 
   constructor(private http: HttpClient) {

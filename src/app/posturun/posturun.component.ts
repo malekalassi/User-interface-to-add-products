@@ -41,7 +41,23 @@ export class PosturunComponent implements OnInit {
 
 
 
-  urunUzun = {}
+  urunUzun = {
+    a101_fiyat: "",
+    sok_fiyat: "",
+    bim_fiyat: "",
+    boyut: "",
+    gram: "",
+    hacim: "",
+    kid: "",
+    marka_ad: "",
+    kad: "",
+    mensei: "",
+    resim_buyuk: "",
+    resim_orta: "",
+    resim_kucuk: "",
+    urun_durum: "",
+    urun_ad: ""
+  }
 
   constructor(private urunservice: UrunService) { }
 

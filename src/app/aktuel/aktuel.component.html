@@ -6,7 +6,7 @@
     </mat-radio-button>
 </mat-radio-group> -->
 
-<form class="form" fxLayout="column" #form="ngForm" (ngSubmit)="submit(form.value)">
+<form class="form" fxLayout="column" #form="ngForm" (ngSubmit)="submit()">
     <mat-form-field>
         <input matInput placeholder="magazalar" name="magazalar" [formControl]="magazalar">
     </mat-form-field>

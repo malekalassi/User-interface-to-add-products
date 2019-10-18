@@ -49,7 +49,23 @@ export class UrundetailComponent implements OnInit {
 
 
   idNumber
-  urunUzun = {}
+  urunUzun = {
+    a101_fiyat: "",
+    sok_fiyat: "",
+    bim_fiyat: "",
+    boyut: "",
+    gram: "",
+    hacim: "",
+    kid: "",
+    marka_ad: "",
+    kad: "",
+    mensei: "",
+    resim_buyuk: "",
+    resim_orta: "",
+    resim_kucuk: "",
+    urun_durum: "",
+    urun_ad: ""
+  }
   constructor(private route: ActivatedRoute, private router: Router, private urunService: UrunService, private http: HttpClient) {
 
   }
@@ -81,7 +97,6 @@ export class UrundetailComponent implements OnInit {
 
 
     this.idNumber = idNumber;
-    console.log(idNumber);
     this.urunService.getUzunUrun(idNumber).subscribe(res => {
 
       this.urunUzun = JSON.parse(JSON.stringify(res));

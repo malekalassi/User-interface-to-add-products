@@ -1,0 +1,24 @@
+<!-- <label id="example-radio-group-label">Mağazayı seç</label>
+<mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group">
+    <mat-radio-button class="example-radio-button" *ngFor="let magaza of magazalar" [value]="magaza"
+        (click)="returnDeger(magaza)">
+        {{magaza}}
+    </mat-radio-button>
+</mat-radio-group> -->
+
+<form class="form" fxLayout="column" #form="ngForm" (ngSubmit)="submit(form.value)">
+    <mat-form-field>
+        <input matInput placeholder="magazalar" name="magazalar" [formControl]="magazalar">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="baslangic tarihi" name="baslangic" [formControl]="baslangic">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="bitis tarihi" name="bitis" [formControl]="bitis">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="durum" name="durum" [formControl]="durum">
+    </mat-form-field>
+
+    <button mat-raised-button type="submit" color="primary">Ekle</button>
+</form>

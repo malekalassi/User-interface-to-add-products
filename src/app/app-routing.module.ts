@@ -1,3 +1,4 @@
+import { AktuelComponent } from './aktuel/aktuel.component';
 import { KategoriComponent } from './kategori/kategori.component';
 import { UrunozellikComponent } from './urunozellik/urunozellik.component';
 import { MarkaComponent } from './marka/marka.component';
@@ -38,6 +39,10 @@ const routes: Routes = [
   {
     path: 'posturun',
     component: PosturunComponent
+  },
+  {
+    path: 'aktuel',
+    component: AktuelComponent
   }
 ]
 

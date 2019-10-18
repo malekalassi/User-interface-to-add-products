@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   }
   onLogin(postData: { jhon: string, wick: string }) {
     console.log(postData)
-    this.UrunService.postLogin(postData).subscribe(data => {
+    this.UrunService.postData(this.UrunService.urlStanderd + 'shire', postData).subscribe(data => {
       this.data = data;
     },
       err => {
@@ -30,8 +30,6 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('jhon', postData.jhon);
           localStorage.setItem('wick', postData.wick);
           this.router.navigate(['/home'])
-
-
         }
         else {
           alert('password veya kullanci adi yanlis girildi')

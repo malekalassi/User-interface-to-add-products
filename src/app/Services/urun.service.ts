@@ -1,5 +1,5 @@
 
-import { Injectable } from '@angular/core';
+import { Injectable, Optional } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from "rxjs";
 
@@ -35,6 +35,7 @@ export class UrunService {
   urlm = 'http://89.252.178.118/search/marka?baslangic=0&bitis=200&sorgu=';
   urluzun = 'http://89.252.178.118/uzunurun/';
   urltamkat = 'http://89.252.178.118/kategoriler?baslangic=0&bitis=50000';
+  urlStanderd = 'http://89.252.178.118/';
 
 
   constructor(private http: HttpClient) {
@@ -48,9 +49,6 @@ export class UrunService {
 
     return yeni;
   }
-
-
-
   GetUrurs(postData: { title: string }) {
 
     console.log(this.url + postData.title);
@@ -61,9 +59,7 @@ export class UrunService {
   getkategori(postData: { name: string }) {
     console.log(postData.name);
 
-    return this.http.get(this.urlk + postData.name, {
-      observe: 'events'
-    })
+    return this.http.get(this.urlk + postData.name)
   }
   getMarka(postData: { marka: string }) {
     return this.http.get(this.urlm + postData.marka)
@@ -119,9 +115,10 @@ export class UrunService {
     return this.http.delete<any>(this.urluzun + idNumber, options)
   }
 
-  postLogin(postData) {
-    const urlLogin = 'http://89.252.178.118/shire';
-    return this.http.post(urlLogin, postData);
+  postData(url, postData) {
+
+
+    return this.http.post(url, postData);
 
   }
 
